@@ -1,7 +1,7 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");  //canvas context 픽셀들을 컨트롤
-const colors =document.getElementsByClassName("jsColor");
-const range = document.getElementById("jsRange");
+const colors = document.getElementsByClassName("jsColor");
+const range = document.getElementById("jsRange")
 const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
 
@@ -11,7 +11,7 @@ const CANVAS_SIZE = 700;
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
 
-ctx.fillStlye = "white";
+ctx.fillStyle = "white";
 ctx.fillRect(0,0, CANVAS_SIZE, CANVAS_SIZE);
 
 ctx.strokeStyle =INITIAL_COLOR;
@@ -43,14 +43,14 @@ function onMouseMove(event) {
 }
 
  function handleRnageChange(event) {
-    const size=event.target.value;
+    const size = event.target.value;
     ctx.lineWidth = size;
  }
 
 function handleColorClick(event) { 
-    const color = event.target.style.backgroundcolor;
+    const color = event.target.style.backgroundColor;
     ctx.strokeStyle = color;
-    ctx.fillStlye = color;
+    ctx.fillStyle = color;
 }
 
 function handleModeClick()
@@ -71,7 +71,7 @@ function handleCanvasClick(){
 }
 
 function handleCM(event){
-console.log(event);
+event.preventDefault();
 
 }
 
@@ -92,7 +92,7 @@ if (canvas) {
     canvas.addEventListener("contextmenu", handleCM);
 
 }
-Array.from(colors).forEach(color=> color.addEventListener("click", handleColorClick));
+Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
 
 
 if(range) {
