@@ -4,6 +4,7 @@ const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange")
 const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
+const resetbtn = document.getElementById("jsReset");
 
 const INITIAL_COLOR = "#2c2c2c";
 const CANVAS_SIZE = 700;
@@ -83,6 +84,12 @@ function handleClickSave(){
     link.click();
 }
 
+function handleClickReset(){
+    ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE); 
+    ctx.beginPath();
+    window.scrollTo(0,0);
+}
+
 if (canvas) {
     canvas.addEventListener("mousemove", onMouseMove);
     canvas.addEventListener("mousedown", startPainting);
@@ -94,7 +101,6 @@ if (canvas) {
 }
 Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
 
-
 if(range) {
     range.addEventListener("input", handleRnageChange);
 }
@@ -105,4 +111,8 @@ if(mode) {
 
 if(saveBtn){
     saveBtn.addEventListener("click", handleClickSave);
+}
+
+if(resetbtn){
+    resetbtn.addEventListener("click", handleClickReset);
 }

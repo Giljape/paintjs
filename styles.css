@@ -9,8 +9,9 @@ body{
     padding : 50px 50px;
 }
 
-
 .canvas {
+    position: relative;
+    left: -100px;
     width: 700px;
     height: 700px;
     margin-bottom: 80px;
@@ -18,9 +19,12 @@ body{
     border-radius: 15px;
     box-shadow:  0 4px 6px rgba(50, 50 , 93, 0.11), 0 1px 3px rgba(0, 0 , 0, 0.08);
 }
+
 .controls{
-    margin-top: 80px;
     display: flex;
+    position: absolute;
+    right: 100px;
+    top: 15%;
     flex-direction: column;
     align-items: center;
 }
@@ -32,7 +36,7 @@ body{
 .controls__btns button {
     all:unset;
     cursor: pointer;
-    background-color: white;
+    background-color: #fff;
     padding: 5px 0px;
     width: 80px;
     text-align: center;
@@ -51,11 +55,13 @@ body{
 
 .controls .controls__colors {
     display: flex;
+    flex-direction: column;    
 }
 .controls__colors   .controls__color
 {
     width: 50px;
     height: 50px;
+    margin-bottom: 4px;
     border-radius: 25px;
     cursor: pointer;
     box-shadow:  0 4px 6px rgba(50, 50 , 93, 0.11), 0 1px 3px rgba(0, 0 , 0, 0.08);
